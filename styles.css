@@ -1,14 +1,14 @@
 body {
-    font-family: "Cherry Swash", serif;
+    font-family: 'Cherry Swash', Serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
 }
 
 header {
-    text-align: center;
+    background-color: #ffcc00;
     padding: 20px;
-    background-color: #ffcc00; 
+    text-align: center;
 }
 
 h1 {
@@ -17,9 +17,10 @@ h1 {
 }
 
 .search-bar {
-    padding: 10px;
-    width: 50%;
     margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -27,28 +28,72 @@ h1 {
 .banner {
     position: relative;
     overflow: hidden;
-    height: 100vh; 
+    height: 700px; 
 }
 
 .banner-images {
     display: flex;
-    animation: slide 15s infinite;
-    height: 100%; 
-    width: 100%;
+    animation: slide 20s infinite;
+    width: 100%; 
 }
 
 .banner-images img {
-    height: 80%; 
-    width: 100%; 
-    object-fit: cover; 
-    flex-shrink: 0; 
+    width: 100vw; /* Full viewport width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area */
 }
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    20% { transform: translateX(0%); }
-    40% { transform: translateX(-100%); }
-    60% { transform: translateX(-200%); }
-    80% { transform: translateX(-300%); } 
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
     100% { transform: translateX(0); }
 }
+
+.categories {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff; 
+}
+
+.category-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.category-links a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ffcc00; 
+    color: #000; 
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-links a:hover {
+    background-color: #e6b800; 
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.dishes {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;
+}
+
