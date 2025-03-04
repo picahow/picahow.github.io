@@ -38,9 +38,9 @@ h1 {
 }
 
 .banner-images img {
-    width: 100vw; /* Full viewport width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area */
+    width: 100vw; 
+    height: auto; 
+    object-fit: cover; 
 }
 
 @keyframes slide {
