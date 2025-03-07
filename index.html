@@ -12,7 +12,8 @@
 <body> 
     <header>
         <h1>Ryan's Malaysian Culinary Delights</h1>
-        <input type="text" placeholder="Search for recipes..." class="search-bar">
+        <input type="text" id="search-bar" placeholder="Search for recipes..." class="search-bar" onkeyup="searchRecipe()">
+        <div id="suggestions" class="suggestions"></div>
     </header>
     
     <div class="banner">
@@ -24,17 +25,58 @@
         </div>
     </div>
 
-    <div class="categories">
-        <h2>Explore Our Dishes</h2>
-        <div class="category-links">
-            <a href="rice-dishes.html">Rice Dishes</a>
-            <a href="noodles.html">Noodles</a>
-            <a href="side-dishes.html">Side Dishes</a>
-            <a href="vegetables.html">Vegetables</a>
-            <a href="dessert.html">Dessert</a>
-            <a href="drinks.html">Drinks</a>
-        </div>
+    <div class="category-links">
+        <a href="rice-dishes.html" class="button">
+            <img src="assets/nasi-lemak.png" alt="Rice Dishes" class="button-icon">
+            Rice Dishes
+        </a>
+        <a href="noodles.html" class="button">
+            <img src="assets/penang-laksa.jpg" alt="Noodles" class="button-icon">
+            Noodles
+        </a>
+        <a href="side-dishes.html" class="button">
+            <img src="assets/satay.jpg" alt="Side Dishes" class="button-icon">
+            Side Dishes
+        </a>
+        <a href="vegetables.html" class="button">
+            <img src="assets/sabah-vegetables.webp" alt="Vegetables" class="button-icon">
+            Vegetables
+        </a>
+        <a href="dessert.html" class="button">
+            <img src="assets/ais-kacang.jpg" alt="Dessert" class="button-icon">
+            Dessert
+        </a>
+        <a href="drinks.html" class="button">
+            <img src="assets/teh-tarik.jpg" alt="Drinks" class="button-icon">
+            Drinks
+        </a>
     </div>
 
+    <script>
+        function searchRecipe() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const dishes = {
+                'nasi lemak': 'nasi-lemak.html',
+                'beef rendang': 'beef-rendang.html',
+                'penang laksa': 'penang-laksa.html',
+                'pan mee': 'pan-mee.html'
+            };
+
+            const suggestionsDiv = document.getElementById('suggestions');
+            suggestionsDiv.innerHTML = ''; 
+
+            for (const dish in dishes) {
+                if (dish.includes(query) && query) {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.className = 'suggestion-item';
+                    suggestionItem.textContent = dish.charAt(0).toUpperCase() + dish.slice(1); 
+                    suggestionItem.onclick = () => {
+                        window.location.href = dishes[dish];
+                    };
+                    suggestionsDiv.appendChild(suggestionItem);
+                }
+            }
+        }
+    </script>
 </body>
 </html>
