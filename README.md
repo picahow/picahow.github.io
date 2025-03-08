@@ -1,15 +1,17 @@
 # picahow.github.io
 
-My personal site.
+A site about my favourite Malaysian dishes, with recipes for each culinary delight!
 
 
 ## Works Cited
 
-Images:
-https://www.tasteatlas.com/pan-mee
-https://www.taste.com.au/recipes/beef-rendang-5/c7bfb64a-ce25-48c6-8939-97c4911e843f
-https://ippinramen.com/product/penang-asam-laksa-with-fish-flakes-two-sets/
-https://asianamericancenter.northeastern.edu/blog/nasi-lemak/
+Images and Recipes:
+https://www.tasteatlas.com/
+https://www.taste.com.au/
+https://ippinramen.com/
+https://www.recipetineats.com/
+https://www.nyonyacooking.com/
+https://authenticfoodquest.com/
 
 > Use this section to  keep track of the resources you reference. You must include a link with a short description of how you used it. 
 

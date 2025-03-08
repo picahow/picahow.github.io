@@ -14,6 +14,7 @@
         <h1>Ryan's Malaysian Culinary Delights</h1>
         <input type="text" id="search-bar" placeholder="Search for recipes..." class="search-bar" onkeyup="searchRecipe()">
         <div id="suggestions" class="suggestions"></div>
+        <a href="about-me.html" class="about-me-button">About Me</a>
     </header>
     
     <div class="banner">
@@ -58,8 +59,11 @@
             const dishes = {
                 'nasi lemak': 'nasi-lemak.html',
                 'beef rendang': 'beef-rendang.html',
+                'hainanese chicken rice': 'hainanese-chicken-rice.html',
+                'nasi goreng': 'nasi-goreng.html',
                 'penang laksa': 'penang-laksa.html',
                 'pan mee': 'pan-mee.html',
+                'mee goreng':'mee-goreng.html',
                 'sabah vegetables': 'sabah-vegetables.html',
                 'ais kacang': 'ais-kacang.html',
                 'satay': 'satay.html',
@@ -81,6 +85,40 @@
                 }
             }
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const categoryLinks = document.querySelector('.category-links');
+    let lastScrollTop = 0;
+
+    function checkScroll() {
+        const rect = categoryLinks.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 100) {
+            categoryLinks.classList.add('fade-in', 'visible');
+            categoryLinks.classList.remove('fade-out', 'hidden');
+        } else {
+            categoryLinks.classList.add('fade-out', 'hidden');
+            categoryLinks.classList.remove('fade-in', 'visible');
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            categoryLinks.classList.add('fade-in', 'visible');
+            categoryLinks.classList.remove('fade-out', 'hidden');
+        } else {
+            categoryLinks.classList.add('fade-out', 'hidden');
+            categoryLinks.classList.remove('fade-in', 'visible');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+    });
+
+    checkScroll(); 
+});
     </script>
 </body>
 </html>

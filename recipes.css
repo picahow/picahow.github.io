@@ -8,7 +8,8 @@
 
 .dish-image {
     width: 400px;
-    height: auto; 
+    max-height:300px;
+    object-fit: cover; 
 }
 
 h2 {

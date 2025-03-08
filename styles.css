@@ -16,6 +16,24 @@ h1 {
     font-size: 2.5em;
 }
 
+.about-me-button {
+    position: absolute; 
+    top: 40px; 
+    left: 40px; 
+    width: 100px;
+    display: inline-block;
+    padding: 15px 10px;
+    background-color: #ffcc00; 
+    color: #000; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.about-me-button:hover {
+    background-color: #e6b800; 
+}
+
 .search-bar {
     margin-top: 10px;
     padding: 10px;
@@ -51,6 +69,7 @@ h1 {
     position: relative;
     overflow: hidden;
     height: 700px; 
+    align-items: center
 }
 
 .banner-images {
@@ -63,6 +82,7 @@ h1 {
     width: 100vw; 
     height: auto; 
     object-fit: cover; 
+    align-items: center;
 }
 
 @keyframes slide {
@@ -95,7 +115,7 @@ h1 {
 }
 
 .button-icon {
-    max-height: 100px; 
+    max-height: 200px; 
     width: auto;
     height: auto; 
     margin-bottom: 5px; 
@@ -111,16 +131,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.category-links a {
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #ffcc00; 
-    color: #000; 
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.category-links a:hover {
+.category-links :hover {
     background-color: #e6b800; 
 }
 
@@ -139,4 +150,26 @@ footer {
     flex-direction: column;
     align-items: center; 
     padding: 20px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-out {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-out.hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
